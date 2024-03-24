@@ -18,7 +18,7 @@ const Form = ({
     const handleSubmit = async(e) => {
         console.log('data :>> ', data);
         e.preventDefault()
-        const res = await fetch(`http://127.0.0.1:8000/api/${isSignInPage ? 'login' : 'register'}`, {
+        const res = await fetch(`https://chat-app-server-z6li.onrender.com/api/${isSignInPage ? 'login' : 'register'}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,6 +40,8 @@ const Form = ({
   return (
     <div className="bg-light h-screen flex items-center justify-center">
         <div className=" bg-white w-[600px] h-[800px] shadow-lg rounded-lg flex flex-col justify-center items-center">
+        <img src="https://i.pinimg.com/originals/e3/1b/75/e31b752875679b64fce009922f9f0dda.gif" alt=""  width={"75%"} height={"50%"}/>
+          
             <div className=" text-4xl font-extrabold">Welcome {isSignInPage && 'Back'}</div>
             <div className=" text-xl font-light mb-14">{isSignInPage ? 'Sign in to get explored' : 'Sign up to get started'}</div>
             <form className="flex flex-col items-center w-full" onSubmit={(e) => handleSubmit(e)}>
